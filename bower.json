@@ -24,7 +24,9 @@
     "css",
     "gulpfile.js"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "angular": "^1.4.8"
+  },
   "devDependencies": {
     "angular-useragent-parser": "~0.1.0"
   }
