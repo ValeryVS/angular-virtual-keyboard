@@ -71,7 +71,7 @@ angular.module('angular-virtual-keyboard', [])
 			config = config || {};
 			for (key in VKI_CONFIG) {
 				value = VKI_CONFIG[key];
-				if (typeof config[key] is 'undefined') {
+				if (typeof config[key] === 'undefined') {
 					config[key] = value;
 				}
 			}
