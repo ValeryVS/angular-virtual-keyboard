@@ -69,12 +69,12 @@ angular.module('angular-virtual-keyboard', [])
 	return {
 		attach: function(element, config, inputCallback) {
 			config = config || {};
-			config.i18n = config.i18n || VKI_CONFIG.i18n;
-			config.kt = config.kt || VKI_CONFIG.kt;
-			config.relative = config.relative === false ? false : VKI_CONFIG.relative;
-			config.keyCenter = config.keyCenter || VKI_CONFIG.keyCenter;
-			config.sizeAdj = config.sizeAdj === false ? false : VKI_CONFIG.sizeAdj;
-			config.customClass = config.customClass || VKI_CONFIG.customClass;
+			for (key in VKI_CONFIG) {
+				value = VKI_CONFIG[key];
+				if (typeof config[key] is 'undefined') {
+					config[key] = value;
+				}
+			}
 
 			var vki = new VKI(config, VKI_CONFIG.layout, VKI_CONFIG.deadkey, inputCallback);
 			vki.attachVki(element);
